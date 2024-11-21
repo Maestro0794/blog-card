@@ -1,0 +1,118 @@
+/* ------------------------ */
+/*         GENERAL          */
+/* ------------------------ */
+:root {
+    --Golden-Glow: hsl(47, 88%, 63%);
+    --White: hsl(0, 0%, 100%);
+    --Cool-Gray: hsl(0, 0%, 42%);
+    --Obsidian: hsl(0, 0%, 7%);
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: var(--Golden-Glow);
+    font-family: "Figtree", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--Obsidian);
+}
+
+/* ------------------------ */
+/*         CARD             */
+/* ------------------------ */
+
+.card {
+    position: relative;
+    background-color: var(--White);
+    border: 1px solid var(--Obsidian);
+    box-shadow: 5px 5px 10px var(--Obsidian);
+    max-width: 410px;
+    height: 100%;
+    padding: 20px;
+    border-radius: 15px;
+}
+.card::before {
+    content: ""; /* Creates the black layer */
+    position: absolute;
+    top: 10px; /* Offset for the black layer (adjust as needed) */
+    left: 10px; /* Offset for the black layer */
+    width: 100%;
+    height: 100%;
+    background: black; /* Black layer */
+    border-radius: 15px; /* Matches the card's corners */
+    z-index: -1; /* Places it behind the card */
+}
+
+.card__image img{
+    border-radius: 10px;
+    width: 100%;
+    height: 100%;
+}
+
+.active {
+    background-color: var(--Golden-Glow);
+    text-align: center;
+    padding: 7px;
+    width: 100px;
+    border-radius: 5px;
+    margin: 25px 0 15px 0;
+}
+
+.active, .card__title, .nick{
+    font-weight: 900;
+}
+
+.card__time {
+    padding-bottom: 20px;
+}
+
+.card__title, .card__subtitle{
+    padding-bottom: 20px;
+}
+
+.card__title {
+    font-size: 23px;
+}
+
+.card__subtitle{
+    color: var(--Cool-Gray);
+    line-height: 24px;
+}
+
+.card__profile {
+    display: flex;
+    align-items: center;
+}
+
+.avatar {
+    width: 38px;
+    height: 32px;
+    padding-right: 7px;
+}
+
+/* ------------------------ */
+/*         FOOTER           */
+/* ------------------------ */
+
+.footer {
+    padding-top: 40px;
+}
+
+/* ------------------------ */
+/*     RESPONSIVE WEBSITE    */
+/* ------------------------ */
+
+@media (max-width: 425px) {
+    main {
+        margin: 0 20px;
+    }
+}
